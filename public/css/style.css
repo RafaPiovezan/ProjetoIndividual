@@ -1,0 +1,174 @@
+@font-face{
+  font-family: 'Marvel';
+
+  /*Caso a fonte esteja na mesma pasta*/
+  src: url("../assets/fonte/avengers/AVENGEANCE\ HEROIC\ AVENGER.otf") format('truetype');
+}
+
+
+body{
+  background-image: url(../assets/imgs/possivelBack2.jpg);
+  background-size: cover;
+  position: relative;
+  margin: 0;
+
+}
+#banner{
+  background-color: rgba(0, 0, 0, 0.761);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 99;
+  margin: 0;
+  display: flex;
+
+justify-content: space-between;
+
+}
+#banner .container{
+  padding: 4vw;
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+position: relative;
+}
+#banner.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#botoes{
+  display: flex;
+  flex-direction:column;
+margin-top: 25vw;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+#botoes button{
+  width: 28vw;
+  margin-top: .5vw;
+  padding: 1vw;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: white;
+color: white;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: .3s all ease;
+  font: 500 20px 'poppins';
+}
+#botoes button:hover{
+  color: black;
+  }
+#botoes button::before{
+  background: #ffffff;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+ 
+  transition: all 0.6s ease;
+}
+
+.btn::before{
+  width: 0%;
+  height: 100%;
+}
+
+.btn:hover::before{
+  width: 100%;
+}
+
+#esquerda p{
+  font: 400 70px 'Marvel';
+  color: white;
+  margin-top: -1vw;
+  
+}
+#loginAparece{
+display: none;
+}
+#login{
+  background-color: rgba(255, 255, 255, 0.634);
+  
+  padding: 2vw;
+  width: 30vw;
+padding-top: 0;
+  border-radius: 15px;
+  height: min-content;
+}
+#login .card{
+  display: flex;
+  flex-direction: column;
+  font: 500 15px 'poppins';
+
+  
+ 
+}
+#login .card .formulario{
+  display: flex;
+  flex-direction: column;
+}
+
+#login .titulo{
+  color: black;
+  font: 600 25px 'poppins';
+ 
+}
+#login .card button {
+  width: 50%;
+  margin-top: 1vw;
+  margin-left: 25%;
+  padding: .7vw;
+  border-radius: 15px;
+  font: 400 15px 'poppins';
+  background-color: black;
+  color: white;
+  transition: .3s all ease;
+}
+#login .card button:hover{
+  background-color: white;
+  color: black;
+  font: 400 15px 'poppins';
+  border: none;
+
+}
+#login .card input{
+  border-radius: 10px;
+  outline-color: #1e1e1e;
+  border: none;
+
+}
+#login .card input::placeholder{
+  font-family: 'poppins';
+  
+}
+#login .card input{
+  padding: .7vw;
+  margin-bottom: 1vw;
+}
+.titulo{
+  border-bottom: solid 2px black;
+  width: 100%;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+#loading-gif{
+width: 20%;
+  margin-bottom: -1vw;
+  margin-top: 1vw;
+ margin-left: 40%;
+}
+
+.formulario .link{
+  font: 400 15px 'poppins';
+  margin-left: 22%;
+}
