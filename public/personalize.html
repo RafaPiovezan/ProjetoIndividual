@@ -37,13 +37,18 @@
             <div class="formulario">
 
 
-                <span class="tipo_campo">E-mail:</span>
-                <input id="email_input" type="text" placeholder="Login">
-
-                <span class="tipo_campo">Senha:</span>
-                <input id="senha_input" type="password" placeholder="******">
-                <p class="link">Não possui conta?<a href="cadastro.html">clique aqui</a></p>
-                <button class="btn" onclick="entrar()">Entrar</button>
+                <span class="tipo_campo">Apelido:</span>
+                <input id="apelido_input" type="text" placeholder="Login">
+                <p>Escolha sua origem:</p>
+<select name="" id="origem_input">
+    <option value="Desconhecido">Selecione</option>
+    <option value="Asgard">Asgard</option>
+    <option value="Godthab Omega">Godthab Omega</option>
+    <option value="Terra">Terra</option>
+</select>
+               
+       
+                <button class="btn" onclick="Finalizar()">Finalizar</button>
                 
 
             </div>
@@ -65,14 +70,17 @@
 
 <script>
 
-
-    function entrar() {
+function Finalizar() {
         aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+    
 
-        if (emailVar == "" || senhaVar == "") {
+        var apelidoVar = apelido_input.value;
+        var origemVar = origem_input.value;
+
+        if (apelidoVar == "" || origemVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
@@ -82,51 +90,42 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
+        // Enviando o valor da nova input
+        fetch("/personagem/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/personagem.js
+                apelidoServer: apelidoVar,
+                origemServer: origemVar
+
             })
+           
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+            
+            console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                console.log(resposta);
+                cardErro.style.display = "block";
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+                mensagem_erro.innerHTML = "Seu personagem está salvo";
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location = "./personalize.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
+                setTimeout(() => {
+                    window.location = "jogo.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+                throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
 
         return false;
     }
@@ -134,5 +133,4 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
 </script>
