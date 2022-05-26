@@ -172,3 +172,99 @@ width: 20%;
   font: 400 15px 'poppins';
   margin-left: 22%;
 }
+
+
+
+
+#Personagens img{
+  width: 10vw;
+  border-radius: 15px;
+}
+
+
+#Personagens .titulo p{
+  font: 400 40px 'Marvel';
+  color: white;
+
+}
+#Personagens .titulo{
+  border-bottom: solid 2px white;
+}
+#Personagens{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+}
+#Personagens button{
+  background-color: white;
+  font: 500 15px 'poppins';
+  color: black;
+  transition: .3s;
+  border-radius: 15px;
+  padding: 1vw;
+margin-left: 2vw;
+border: none;
+}
+
+#Personagens button:hover{
+  background-color: black;
+  color: white;
+}
+
+.EstHistoria p{
+  color:white;
+  font: 400 15px 'poppins';
+}
+.EstHistoria{
+
+  width: 60%;
+  text-align: center;
+}
+.formatacaoPadrao{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formatacaoPadrao .card{
+  background-color: #000000d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  margin-top: -2vw;
+}
+img.possibilidade1:hover #possibilidade{
+  display: block;
+  color: white;
+  background-color: red;
+}
+.caminhos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top:2vw;
+}
+.caminhos img {
+  margin-left: 3vw;
+}
+.dica{
+  width: 80%;
+}
+.dica select{
+  border-radius: 10px;
+  outline-color: #1e1e1e;
+  border: none;
+  width: 50%;
+ 
+  font-family: 'poppins';
+}
+
+.dica select{
+  padding: .7vw;
+  margin-bottom: 1vw;
+}

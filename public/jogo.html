@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faça sua escolha</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="jogo">
+    <div id="banner">
+        <div id="Personagens">
+            <div class="card" id="Escolha1">
+                <div class="titulo">
+                    <p>Escolha seu companheiro</p>
+                </div>
+                <div id="">
+
+                    <button onclick="HomemdeFerro()">
+                        <img src="assets/imgs/homemDeFerro.jpg"><br>
+                        Homem De ferro
+                    </button>
+                    <button onclick="HomemdeFerro()">
+                        <img src="assets/imgs/cap.jpg"> <br>
+                        Capitão America
+                    </button>
+                    <button onclick="HomemdeFerro()">
+                        <img src="assets/imgs/thor.jpg"> <br>
+                        Thor
+                    </button>
+
+                </div>
+
+
+            </div>
+            <div id="Escolha2" class="formatacaoPadrao" style="display: none;">
+                <div class="titulo">
+                    <p>Bem-vindo a nossa aventura</p>
+                </div>
+
+
+                <div class="card">
+
+                    <div id="historia" class="EstHistoria">
+                        <div id="primeiraParte">
+                            <p id="texto">
+                            </p>
+                            <button onclick="continuar()">Continuar</button>
+                        </div>
+                        <div id="segundaParte" style="display: none;">
+                            <p id="textoP2" class="estiloTexto">
+
+                            </p>
+
+
+                            <div class="caminhos">
+                                <div id="possibilidade1">
+
+                                </div>
+                                <div id="possibilidade2">
+
+                                </div>
+
+                            </div>
+                            <span class="dica" id="Dica">
+
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div id="Escolha3" class="formatacaoPadrao" style="display: none;">
+                <div class="titulo">
+                    <p>Bem-vindo a nossa aventura</p>
+                </div>
+
+
+                <div class="card">
+
+                    <div id="historia2" class="EstHistoria">
+
+                        <div>
+                            <p id="textoP3" class="estiloTexto">
+
+                            </p>
+
+
+                            <div class="caminhos">
+                                <div id="possibilidade3">
+
+                                </div>
+                                <div id="possibilidade4">
+
+                                </div>
+
+                            </div>
+                            <span class="dica" id="Dica2">
+
+                                
+
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var textos = [
+        'Você e seu parceiro se preparam para pegar a primeira joia, a joia do espaço, após hulk fazer uma varredura temporal vocês descobrem que está joia está localizada em uma base militar que foi utilizada durante do ano de 1947, a joia está localiza em um bunker subterraneo, vocês se preparam para viajem , vestem seus trajes e combinam uma estratégia, ao serem teleportados ao ano de 1947,vocês surgem atrás de um carro, se disfarçam e entram na base, ao chegar no local que da acesso ao bunker, se deparam com duas opções de entrada',
+        'Você escolhe ir pela porta e da de cara com 5 policiais que desconfiam de vocês'
+    ]
+    var homemDeFerro = 0;
+
+    function HomemdeFerro() {
+        homemDeFerro = 1;
+        jogo.style.backgroundImage = 'url(assets/imgs/backHF.jpg)';
+        Escolha1.style.display = 'none';
+        Escolha2.style.display = 'block';
+        texto.innerHTML = `
+    <p id="texto">Você escolheu Homem de Ferro para ser seu companheiro nessa jornada. <br>
+                        Anos após Thanos ter exterminado metade da vida em todo universo, homem formiga retorna do universo quantico e diz que é possivel realizar uma viagem no tempo
+                        Os vingadores se unem com objetivo de encontrar as joias do infito para derrotar thanos, você e homem de ferro formam uma dupla
+                        para procurar a joia azul(a joia do espaço), Tony Stark, rocket e hulk se unem e constroem a maquina do tempo, analisando as possibilidades Hulk chega conclusão que o passado não altera o presente mas as suas decisões criam linhas temporais alternativas.
+                        </p>
+    `;
+
+        textoP2.innerHTML = `
+    ${textos[0]}
+    `;
+        possibilidade1.innerHTML = `
+    <img src ="assets/imgs/cap.jpg" class="possibilidade1">
+    `
+        possibilidade2.innerHTML = `
+    <img src ="assets/imgs/cap.jpg" class='possibilidade2'>`;
+    Dica.innerHTML = `
+    
+    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+                                <select name="" id="slescolha" onchange="Pergunta2()">
+                                    <option value="0">Selecione</option>
+                                    <option value="1">Ir pela porta</option>
+                                    <option value="2">Ir pela porta</option>
+                                </select>
+`;
+    }
+
+    function Pergunta2() {
+        var axEscolha = slescolha.value;
+
+
+
+        if (homemDeFerro == 1) {
+            if (axEscolha == "0") {
+                alert("selecione uma opção")
+            } else if (axEscolha == "1") {
+                Escolha2.style.display ='none';
+                Escolha3.style.display = 'block'
+
+                textoP3.innerHTML = `${textos[1]}`
+                
+        possibilidade1.innerHTML = `
+    <img src ="assets/imgs/cap.jpg" class="possibilidade3">
+    `
+        possibilidade2.innerHTML = `
+    <img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+    Dica2.innerHTML = `
+    
+    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+                                <select name="" id="slescolha" onchange="Pergunta2()">
+                                    <option value="0">Selecione</option>
+                                    <option value="1">Ir pela porta</option>
+                                    <option value="2">Ir pela porta</option>
+                                </select>
+`;
+            } else {
+                Escolha2.style.display ='none';
+                Escolha3.style.display = 'block'
+
+                textoP3.innerHTML = `${textos[2]}`
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function continuar() {
+        primeiraParte.style.display = 'none';
+        segundaParte.style.display = 'block';
+    }
+</script>
