@@ -59,7 +59,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    entrar,
     cadastrar,
     listar,
     testar

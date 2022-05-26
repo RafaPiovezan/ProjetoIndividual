@@ -83,15 +83,16 @@
                     </div>
                 </div>
             </div>
+
             <div id="Escolha3" class="formatacaoPadrao" style="display: none;">
                 <div class="titulo">
-                    <p>Bem-vindo a nossa aventura</p>
+                    <p id="TituloHistoria3" ></p>
                 </div>
 
 
                 <div class="card">
 
-                    <div id="historia2" class="EstHistoria">
+                    <div id="historia3" class="EstHistoria">
 
                         <div>
                             <p id="textoP3" class="estiloTexto">
@@ -122,7 +123,7 @@
             </div>
             <div id="Escolha4" class="formatacaoPadrao" style="display: none;">
                 <div class="titulo">
-                    <p>Bem-vindo a nossa aventura</p>
+                    <p id="TituloHistoria4" ></p>
                 </div>
 
 
@@ -144,7 +145,7 @@
                                 </div>
 
                             </div>
-                            <span class="dica" id="Dica">
+                            <span class="dica" id="Dica3">
 
                             </span>
                         </div>
@@ -161,7 +162,9 @@
 <script>
     var textos = [
         'Você e seu parceiro se preparam para pegar a primeira joia, a joia do espaço, após hulk fazer uma varredura temporal vocês descobrem que está joia está localizada em uma base militar que foi utilizada durante do ano de 1947, a joia está localiza em um bunker subterraneo, vocês se preparam para viajem , vestem seus trajes e combinam uma estratégia, ao serem teleportados ao ano de 1947,vocês surgem atrás de um carro, se disfarçam e entram na base, ao chegar no local que da acesso ao bunker, se deparam com duas opções de entrada',
-        'Vocês escolhem ir pela porta, mas se deparam com uma biometria, homem de ferro '
+        'Vocês escolhem ir pela porta, mas se deparam com uma biometria, vocês não querem chamar atenção dos policiais ao criar um plano arriscado então se direcionam a escotilha que da acesso direto ao bunker,no caminho até o subterraneo da base militar vocês se deparam com um tenente Holward Stark que desconfia de vocês, ao perguntar onde vão, homem de ferro responde que iriam supervisionar o bunker após uma ordem, e que segundo informações externas o bunker estaria sob risco de invasão, o tenente deixa vocês passarem sem mais perguntas e da um tapinha no ombro de homem de ferro, no caminho você pergunta se já se conheciam e ele responde que aquele é pai dele, que nessa época servia ao exercito, e que dali a 10 anos fundaria as empresas Stark e se casaria com sua mãe, ao chegar no bunker é necessario uma senha, você usa um utensilio dado pelo hulk porém o penultimo digito do codigo parece incerto, o utensilio funciona da seguinte maneira para cada digito de senha ele apita 3 numeros para frente, ao iniciar o dispositivo ele apita 5 vezes, logo apos apita 8 vezes,depois ele apita 3 vezes e por fim apita 7 vezes, vocês não entendem o penultimo digito porém ficam na duvida de 0 ou 1. Qual o código correto?',
+        'No caminho até o subterraneo da base militar vocês se deparam com um tenente Holward Stark que desconfia de vocês, ao perguntar onde vão, homem de ferro responde que iriam supervisionar o bunker após uma ordem, e que segundo informações externas o bunker estaria sob risco de invasão, o tenente deixa vocês passarem sem mais perguntas e da um tapinha no ombro de homem de ferro, no caminho você pergunta se já se conheciam e ele responde que aquele é pai dele, que nessa época servia ao exercito, e que dali a 10 anos fundaria as empresas Stark e se casaria com sua mãe, ao chegar no bunker é necessario uma senha, você usa um utensilio dado pelo hulk porém o penultimo digito do codigo parece incerto, o utensilio funciona da seguinte maneira para cada digito de senha ele apita 3 numeros para frente, ao iniciar o dispositivo ele apita 5 vezes, logo apos apita 8 vezes,depois ele apita 3 vezes e por fim apita 7 vezes, vocês não entendem o penultimo digito porém ficam na duvida de 0 ou 1. Qual o código correto?',
+        'O codigo da certo e você conseguem entrar no bunker, a joia azul está logo a frente de vocês, homem de ferro ultiliza o recipente que eles fizeram antes da viagem no tempo para que a joia pudesse ser transportada em segurança, vocês acionam um botão no traje que os leva de volta ao presente...de volta ao presente você se depara com'
     ]
     var homemDeFerro = 0;
 
@@ -184,7 +187,7 @@
             <select name="" id="slescolha" onchange="Pergunta2()">
             <option value="0">Selecione</option>
             <option value="1">Ir pela porta</option>
-            <option value="2">Ir pela porta</option>
+            <option value="2">Ir pela escotilha</option>
             </select>
 `;
     }
@@ -195,36 +198,79 @@
 
 
         if (homemDeFerro == 1) {
+            TituloHistoria3.innerHTML = "O bunker";
+            possibilidade3.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
+                possibilidade4.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+                Dica2.innerHTML = `
+                    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+                    <select name="" id="slescolha3" onchange="Pergunta3()">
+                    <option value="0">Selecione</option>
+                    <option value="1">2504</option>
+                    <option value="2">2514</option>
+                    </select>`;
+
             if (axEscolha == "0") {
                 alert("selecione uma opção");
 
             } else if (axEscolha == "1") {
+               
                 Escolha2.style.display = 'none';
                 Escolha3.style.display = 'block'
 
                 textoP3.innerHTML = `${textos[1]}`
 
-                possibilidade1.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
-                possibilidade2.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
-                Dica2.innerHTML = `
-                    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
-                    <select name="" id="slescolha" onchange="Pergunta2()">
-                    <option value="0">Selecione</option>
-                    <option value="1">Ir pela porta</option>
-                    <option value="2">Ir pela porta</option>
-                    </select>`;
-
+          
             } else {
                 Escolha2.style.display = 'none';
-                Escolha3.style.display = 'block'
+                Escolha3.style.display = 'block';
 
-                textoP3.innerHTML = `${textos[2]}`
+                textoP3.innerHTML = `${textos[2]}`;
+       
             }
         }
     }
 
 
 
+
+    function Pergunta3() {
+        var axEscolha3 = slescolha3.value;
+
+
+
+        if (homemDeFerro == 1) {
+            
+            possibilidade3.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
+                possibilidade4.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+                Dica2.innerHTML = `
+                    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+                    <select name="" id="slescolha2" onchange="Pergunta4()">
+                    <option value="0">Selecione</option>
+                    <option value="1">2504</option>
+                    <option value="2">2514</option>
+                    </select>`;
+
+            if (axEscolha3 == "0") {
+                alert("selecione uma opção");
+
+            } else if (axEscolha3 == "1") {
+                TituloHistoria3.innerHTML = "Codigo Certo";
+                Escolha2.style.display = 'none';
+                Escolha3.style.display = 'block'
+
+                textoP3.innerHTML = `${textos[1]}`
+
+          
+            } else {
+                TituloHistoria3.innerHTML = "Codigo Errado";
+                Escolha2.style.display = 'none';
+                Escolha3.style.display = 'block';
+
+                textoP3.innerHTML = `${textos[2]}`;
+       
+            }
+        }
+    }
 
 
 

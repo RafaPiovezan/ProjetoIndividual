@@ -236,6 +236,7 @@ border: none;
   justify-content: center;
   padding: 1vw;
   margin-top: -2vw;
+
 }
 img.possibilidade1:hover #possibilidade{
   display: block;
@@ -255,7 +256,7 @@ img.possibilidade1:hover #possibilidade{
 .dica{
   width: 80%;
 }
-.dica select{
+.dica select ,.formulario select{
   border-radius: 10px;
   outline-color: #1e1e1e;
   border: none;
@@ -264,7 +265,11 @@ img.possibilidade1:hover #possibilidade{
   font-family: 'poppins';
 }
 
-.dica select{
+.dica select,.formulario select{
   padding: .7vw;
   margin-bottom: 1vw;
+}
+
+#Escolha3 .EstHistoria{
+  width: 90%;
 }
