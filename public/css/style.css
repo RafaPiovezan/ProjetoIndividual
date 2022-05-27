@@ -238,7 +238,7 @@ border: none;
   margin-top: -2vw;
 
 }
-img.possibilidade1:hover #possibilidade{
+img.possibilidade1:hover#possibilidade{
   display: block;
   color: white;
   background-color: red;
@@ -269,7 +269,6 @@ img.possibilidade1:hover #possibilidade{
   padding: .7vw;
   margin-bottom: 1vw;
 }
-
-#Escolha3 .EstHistoria{
+.EstHistoria{
   width: 90%;
 }

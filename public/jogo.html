@@ -24,7 +24,7 @@
 <body id="jogo">
     <div id="banner">
         <div id="Personagens">
-            <div class="card" id="Escolha1">
+            <div class="card" id="Escolha">
                 <div class="titulo">
                     <p>Escolha seu companheiro</p>
                 </div>
@@ -47,7 +47,7 @@
 
 
             </div>
-            <div id="Escolha2" class="formatacaoPadrao" style="display: none;">
+            <div id="Escolha1" class="formatacaoPadrao" style="display: none;">
                 <div class="titulo">
                     <p>Bem-vindo a nossa aventura</p>
                 </div>
@@ -57,12 +57,12 @@
 
                     <div id="historia" class="EstHistoria">
                         <div id="primeiraParte">
-                            <p id="texto">
+                            <p id="texto1">
                             </p>
                             <button onclick="continuar()">Continuar</button>
                         </div>
                         <div id="segundaParte" style="display: none;">
-                            <p id="textoP2" class="estiloTexto">
+                            <p id="textoP1" class="estiloTexto">
 
                             </p>
 
@@ -84,18 +84,18 @@
                 </div>
             </div>
 
-            <div id="Escolha3" class="formatacaoPadrao" style="display: none;">
+            <div id="Escolha2" class="formatacaoPadrao" style="display: none;">
                 <div class="titulo">
-                    <p id="TituloHistoria3" ></p>
+                    <p id="TituloHistoria2"></p>
                 </div>
 
 
                 <div class="card">
 
-                    <div id="historia3" class="EstHistoria">
+                    <div id="historia2" class="EstHistoria">
 
                         <div>
-                            <p id="textoP3" class="estiloTexto">
+                            <p id="textoP2" class="estiloTexto">
 
                             </p>
 
@@ -121,17 +121,42 @@
                 </div>
 
             </div>
-            <div id="Escolha4" class="formatacaoPadrao" style="display: none;">
+
+            <div id="mensagem" style="display:none;" class="formatacaoPadrao">
                 <div class="titulo">
-                    <p id="TituloHistoria4" ></p>
+                    <p id="ContinuarTitulo"></p>
+                </div>
+
+
+                <div class="card">
+
+                    <div id="historiaContinuar" class="EstHistoria">
+                        <div>
+                            <p id="textoContinuar" class="estiloTexto">
+
+                            </p>
+
+
+                            <span class="dica" id="DicaContinuar">
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Escolha3" class="formatacaoPadrao" style="display: none;">
+                <div class="titulo">
+                    <p id="TituloHistoria3"></p>
                 </div>
 
 
                 <div class="card">
 
                     <div id="historia3" class="EstHistoria">
-                        <div style="display: none;">
-                            <p id="textoP4" class="estiloTexto">
+                        <div>
+                            <p id="textoP3" class="estiloTexto">
 
                             </p>
 
@@ -152,7 +177,60 @@
                     </div>
                 </div>
             </div>
+            <div id="Escolha4" class="formatacaoPadrao" style="display: none;">
+                <div class="titulo">
+                    <p id="TituloHistoria4"></p>
+                </div>
 
+
+                <div class="card">
+
+                    <div id="historia4" class="EstHistoria">
+                        <div>
+                            <p id="textoP4" class="estiloTexto">
+
+                            </p>
+
+
+                            <div class="caminhos">
+                                <div id="possibilidade7">
+
+                                </div>
+                                <div id="possibilidade8">
+
+                                </div>
+
+                            </div>
+                            <span class="dica" id="Dica4">
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="continuar3" style="display:none;" class="formatacaoPadrao">
+                <div class="titulo">
+                    <p id="ContinuarTitulo3"></p>
+                </div>
+
+
+                <div class="card">
+
+                    <div id="historiaContinuar3" class="EstHistoria">
+                        <div>
+                            <p id="textoContinuar3" class="estiloTexto">
+
+                            </p>
+
+
+                            <span class="dica" id="DicaContinuar3">
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -164,22 +242,30 @@
         'Você e seu parceiro se preparam para pegar a primeira joia, a joia do espaço, após hulk fazer uma varredura temporal vocês descobrem que está joia está localizada em uma base militar que foi utilizada durante do ano de 1947, a joia está localiza em um bunker subterraneo, vocês se preparam para viajem , vestem seus trajes e combinam uma estratégia, ao serem teleportados ao ano de 1947,vocês surgem atrás de um carro, se disfarçam e entram na base, ao chegar no local que da acesso ao bunker, se deparam com duas opções de entrada',
         'Vocês escolhem ir pela porta, mas se deparam com uma biometria, vocês não querem chamar atenção dos policiais ao criar um plano arriscado então se direcionam a escotilha que da acesso direto ao bunker,no caminho até o subterraneo da base militar vocês se deparam com um tenente Holward Stark que desconfia de vocês, ao perguntar onde vão, homem de ferro responde que iriam supervisionar o bunker após uma ordem, e que segundo informações externas o bunker estaria sob risco de invasão, o tenente deixa vocês passarem sem mais perguntas e da um tapinha no ombro de homem de ferro, no caminho você pergunta se já se conheciam e ele responde que aquele é pai dele, que nessa época servia ao exercito, e que dali a 10 anos fundaria as empresas Stark e se casaria com sua mãe, ao chegar no bunker é necessario uma senha, você usa um utensilio dado pelo hulk porém o penultimo digito do codigo parece incerto, o utensilio funciona da seguinte maneira para cada digito de senha ele apita 3 numeros para frente, ao iniciar o dispositivo ele apita 5 vezes, logo apos apita 8 vezes,depois ele apita 3 vezes e por fim apita 7 vezes, vocês não entendem o penultimo digito porém ficam na duvida de 0 ou 1. Qual o código correto?',
         'No caminho até o subterraneo da base militar vocês se deparam com um tenente Holward Stark que desconfia de vocês, ao perguntar onde vão, homem de ferro responde que iriam supervisionar o bunker após uma ordem, e que segundo informações externas o bunker estaria sob risco de invasão, o tenente deixa vocês passarem sem mais perguntas e da um tapinha no ombro de homem de ferro, no caminho você pergunta se já se conheciam e ele responde que aquele é pai dele, que nessa época servia ao exercito, e que dali a 10 anos fundaria as empresas Stark e se casaria com sua mãe, ao chegar no bunker é necessario uma senha, você usa um utensilio dado pelo hulk porém o penultimo digito do codigo parece incerto, o utensilio funciona da seguinte maneira para cada digito de senha ele apita 3 numeros para frente, ao iniciar o dispositivo ele apita 5 vezes, logo apos apita 8 vezes,depois ele apita 3 vezes e por fim apita 7 vezes, vocês não entendem o penultimo digito porém ficam na duvida de 0 ou 1. Qual o código correto?',
-        'O codigo da certo e você conseguem entrar no bunker, a joia azul está logo a frente de vocês, homem de ferro ultiliza o recipente que eles fizeram antes da viagem no tempo para que a joia pudesse ser transportada em segurança, vocês acionam um botão no traje que os leva de volta ao presente...de volta ao presente você se depara com'
+        'O codigo da certo e você conseguem entrar no bunker, a joia azul está logo a frente de vocês, homem de ferro ultiliza o recipente que eles fizeram antes da viagem no tempo para que a joia pudesse ser transportada em segurança, vocês acionam um botão no traje que os leva de volta ao presente...',
+        'O codigo da errado e vocês chamam a atenção dos militares próximos a vocês,ao ver essa aproximação vocês usam a funcionalidade especial no traje, para voltar ao presente, ao voltar vocês pedem a hulk para teleporta-los a uma linha temporal antes deles chegarem a base, vocês voltam e fazem tudo corretamente',
+        'Voltando ao presente com a missão concluida vocês são os primeiros a chegar Tony(Homem de ferro) e Banner(Hulk) pegar a joia e guardam ela em local apropriado para que ela não oferecesse risco a ninguem na torre, após alguns minutos Thor e Peter(Senhor das estrelas) voltam com a joia da realidade, thor parece bastante frustrado e vc se aproxima para perguntar se estava tudo bem, Thor fala que rever a familia não é facil, pois naquele mesmo dia sua mãe viria a ser assasinada e que ele não poderia influenciar naquilo, que sua mãe já saberia o que iria acontecer e que ela o convenceu a levar o mertelo de volta para o presente,Steve(Capitão América) e Natasha(Viuva) chegam, Steve está todo machucado e Tony brinca ironicamente "Foi dificil?", Steve responde que nunca mais vai se ver no espelho sem querem bater nele, Hulk faz a seleção das joias...Você e Tony Ficam com a joia do poder localizada em uma caverna, Thor e Peter ficam com a joia do Tempo que estava em posse de uma Anciã e Steve e Viuva ficam com a pedra da Alma.<br> Vocês são teleportados a caverna onde a joia do Poder estaria chegando lá se deparam com Peter(Passado) indo roubar a joia, Tony fala que alguma coisa poderia acontecer, o que fazer?',
+        'Vocês decidem Atacar Peter antes dele roubar a jóia, porém Peter já esperava esse ataque repentino e veio preparado com hamas bastante tecnológicas, você sofre certo dano ficando imóvel no chão devido a uma arma paralisadora de Peter, nesse ataque outros inimigos que preparavam um emboscada partem para cima de Peter tambem uma batalha se inicia e homem de ferro discretamente te arrasta para fora, vocês são obrigados a voltar ao presente para poder refazer suas ações, pois após peter ser atacado por diversos inimigos um deles rouba a jóia e vocês já não poderiam fazer mais nada, caso contrario iriam alarmar o exercito inter-espacial, de volta ao presente Hulk diz que teriamos apenas como fazer mais uma viagem e essa teria de ser certeira,Você e Tony acertam um plano após saber que existem outras pessoas esperando Peter e que ele estava bem preparado, chegando ao local da caverna, vocês dois se escondem atrás de pedras e esperam para que a emboscada comece, Peter pega a jóia e ao sair como o planejado os inimigos atacam ele, Peter consegue se defender da maioria dos inimigos, porém Tony percebe que um inimigo daria um golpe pelas costas de Peter, disfarçadamente você atira no inimigo atrás de peter sem que ele perceba, Peter derruba todos os inimigos e você chega em um ataque pelas costa e nocauteia ele de maneira que ele não visse que fez isso, vocês pegam a jóia..porém ao sair da caverna se deparam com Thanos...',
+        'Você e Tony acertam um plano após saber que existem outras pessoas esperando Peter e que ele estava bem preparado, chegando ao local da caverna, vocês dois se escondem atrás de pedras e esperam para que a emboscada comece, Peter pega a jóia e ao sair como o planejado os inimigos atacam ele, Peter consegue se defender da maioria dos inimigos, porém Tony percebe que um inimigo daria um golpe pelas costas de Peter, disfarçadamente você atira no inimigo atrás de peter sem que ele perceba, Peter derruba todos os inimigos e você chega em um ataque pelas costa e nocauteia ele de maneira que ele não visse que fez isso, vocês pegam a jóia..porém ao sair da caverna se deparam com Thanos...',
+        'Vocês escolhem enfrentar Thanos, porém Tony diz que se enfretarmos ele agora jamais conseguiriamos derrota-lo no presente e reverter as ações dele com a manopla, Vocês voltam ao presente com a joia do Poder, ao serem teleportados veem Steve e Natasha com a pedra da Alma, os dois parecem assustados e ao serem questionados por Tony, eles dizem que para pegarem a pedra da Alma quase que tiveram que se sacrificar um pelo outro, Tony pergunta o que aconteceu exatamente, capitão diz que ao chegar no local da jóia da Alma caveira vermalha estava esperando e que caso '
+
+
     ]
     var homemDeFerro = 0;
 
     function HomemdeFerro() {
         homemDeFerro = 1;
         jogo.style.backgroundImage = 'url(assets/imgs/backHF.jpg)';
-        Escolha1.style.display = 'none';
-        Escolha2.style.display = 'block';
-        texto.innerHTML = `
+        Escolha.style.display = 'none';
+        Escolha1.style.display = 'block';
+        texto1.innerHTML =
+            `
             <p id="texto">Você escolheu Homem de Ferro para ser seu companheiro nessa jornada. <br>
-            Anos após Thanos ter exterminado metade da vida em todo universo, homem formiga retorna do universo quantico e diz que é possivel realizar uma viagem no tempo
+            Anos após Thanos ter exterminado metade da vida em todo universo, homem formiga retorna do universo quantico e diz que é possivel realizar uma vim no tempo
             Os vingadores se unem com objetivo de encontrar as joias do infito para derrotar thanos, você e homem de ferro formam uma dupla
             para procurar a joia azul(a joia do espaço), Tony Stark, rocket e hulk se unem e constroem a maquina do tempo, analisando as possibilidades Hulk chega conclusão que o passado não altera o presente mas as suas decisões criam linhas temporais alternativas.</p>`;
 
-        textoP2.innerHTML = `${textos[0]}`;
+        textoP1.innerHTML = `${textos[0]}`;
         possibilidade1.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade1">`;
         possibilidade2.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade2'>`;
         Dica.innerHTML = `
@@ -198,12 +284,12 @@
 
 
         if (homemDeFerro == 1) {
-            TituloHistoria3.innerHTML = "O bunker";
+            TituloHistoria2.innerHTML = "O bunker";
             possibilidade3.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
-                possibilidade4.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
-                Dica2.innerHTML = `
+            possibilidade4.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+            Dica2.innerHTML = `
                     <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
-                    <select name="" id="slescolha3" onchange="Pergunta3()">
+                    <select name="" id="slescolha2" onchange="Pergunta3()">
                     <option value="0">Selecione</option>
                     <option value="1">2504</option>
                     <option value="2">2514</option>
@@ -213,65 +299,164 @@
                 alert("selecione uma opção");
 
             } else if (axEscolha == "1") {
-               
-                Escolha2.style.display = 'none';
-                Escolha3.style.display = 'block'
 
-                textoP3.innerHTML = `${textos[1]}`
+                Escolha1.style.display = 'none';
+                Escolha2.style.display = 'block';
 
-          
+                textoP2.innerHTML = `${textos[1]}`
             } else {
-                Escolha2.style.display = 'none';
-                Escolha3.style.display = 'block';
+                Escolha1.style.display = 'none';
+                Escolha2.style.display = 'block';
 
-                textoP3.innerHTML = `${textos[2]}`;
-       
+                textoP2.innerHTML = `${textos[2]}`;
+
             }
         }
     }
 
-
-
-
     function Pergunta3() {
+        var axEscolha2 = slescolha2.value;
+        if (homemDeFerro == 1) {
+
+            DicaContinuar.innerHTML = `
+            <button onclick="Continuar2()">Continuar</button>`;
+
+            if (axEscolha2 == "0") {
+                alert("selecione uma opção");
+
+            } else if (axEscolha2 == "1") {
+                Escolha2.style.display = 'none';
+                mensagem.style.display = 'block';
+                ContinuarTitulo.innerHTML = "Codigo Certo";
+                textoContinuar.innerHTML = `${textos[3]}`;
+
+
+
+            } else {
+                ContinuarTitulo.innerHTML = "Codigo Errado";
+                Escolha2.style.display = 'none';
+                mensagem.style.display = 'block';
+
+                textoContinuar.innerHTML = `${textos[4]}`;
+
+            }
+        }
+    }
+
+    function Continuar2() {
+        if (homemDeFerro == 1) {
+            TituloHistoria3.innerHTML = "A joia do Poder";
+         
+            Dica3.innerHTML = `
+                    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+                    <select name="" id="slescolha3" onchange="Pergunta4()">
+                    <option value="0">Selecione</option>
+                    <option value="1">Atacar</option>
+                    <option value="2">Esperar</option>
+                    </select>`;
+
+            mensagem.style.display = 'none';
+            Escolha3.style.display = 'block';
+
+            textoP3.innerHTML = `${textos[5]}`;
+        }
+    }
+
+    function Pergunta4() {
         var axEscolha3 = slescolha3.value;
 
 
 
+
         if (homemDeFerro == 1) {
-            
-            possibilidade3.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
-                possibilidade4.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
-                Dica2.innerHTML = `
-                    <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
-                    <select name="" id="slescolha2" onchange="Pergunta4()">
-                    <option value="0">Selecione</option>
-                    <option value="1">2504</option>
-                    <option value="2">2514</option>
-                    </select>`;
+            TituloHistoria4.innerHTML = "A caverna";
+            possibilidade7.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
+            possibilidade8.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+            Dica4.innerHTML = `
+            <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+            <select name="" id="slescolha4" onchange="Continuar3()">
+            <option value="0">Selecione</option>
+            <option value="1">Enfrentar Thanos</option>
+            <option value="2">Teleportar</option>
+            </select>`;
 
             if (axEscolha3 == "0") {
                 alert("selecione uma opção");
 
             } else if (axEscolha3 == "1") {
-                TituloHistoria3.innerHTML = "Codigo Certo";
-                Escolha2.style.display = 'none';
-                Escolha3.style.display = 'block'
 
-                textoP3.innerHTML = `${textos[1]}`
+                Escolha3.style.display = 'none';
+                Escolha4.style.display = 'block';
 
-          
+                textoP4.innerHTML = `${textos[6]}`
             } else {
-                TituloHistoria3.innerHTML = "Codigo Errado";
-                Escolha2.style.display = 'none';
-                Escolha3.style.display = 'block';
+                Escolha3.style.display = 'none';
+                continuar3.style.display = 'block';
 
-                textoP3.innerHTML = `${textos[2]}`;
-       
+                textoP4.innerHTML = `${textos[7]}`;
+
             }
         }
     }
+    
+    function Continuar3() {
 
+
+if (homemDeFerro == 1) {
+    TituloHistoria3.innerHTML = "A batalha Final";
+    possibilidade5.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
+    possibilidade6.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+    Dica3.innerHTML = `
+            <p>Dica: Passe o mouse sobre a sua escolha para ver as possibilidades</p>
+            <select name="" id="slescolha3" onchange="Pergunta4()">
+            <option value="0">Selecione</option>
+            <option value="1">Atacar</option>
+            <option value="2">Esperar</option>
+            </select>`;
+
+    mensagem.style.display = 'none';
+    Escolha3.style.display = 'block';
+
+    textoP3.innerHTML = `${textos[5]}`;
+}
+}
+
+    function Pergunta5() {
+        var axEscolha4 = slescolha4.value;
+
+
+
+
+        if (homemDeFerro == 1) {
+            TituloHistoria5.innerHTML = "A caverna";
+            possibilidade9.innerHTML = `<img src ="assets/imgs/cap.jpg" class="possibilidade3">`;
+            possibilidade10.innerHTML = `<img src ="assets/imgs/cap.jpg" class='possibilidade4'>`;
+            Dica5.innerHTML = `
+            <p>Dica:Escolha Livre de Probabilidades</p>
+            <select name="" id="slescolha4" onchange="Pergunta5()">
+            <option value="0">Selecione</option>
+            <option value="1">Homem de Ferro</option>
+            <option value="2">Thor</option>
+            <option value="3">Capitão América</option>
+            </select>`;
+
+            if (axEscolha4 == "0") {
+                alert("selecione uma opção");
+
+            } else if (axEscolha4 == "1") {
+
+                Escolha4.style.display = 'none';
+                EslHomemdeFerro.style.display = 'block';
+            } else if(axEscolha4=="2") {
+                Escolha4.style.display = 'none';
+                EslCapAmerica.style.display = 'block';
+
+            }else{
+                Escolha4.style.display = 'none';
+                EslThor.style.display = 'block';
+            }
+        }
+    }
 
 
 
