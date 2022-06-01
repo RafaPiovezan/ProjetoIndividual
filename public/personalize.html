@@ -76,10 +76,10 @@ function Finalizar() {
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
     
-
+        var idVar =sessionStorage.ID_USUARIO ;
         var apelidoVar = apelido_input.value;
         var origemVar = origem_input.value;
-
+        
         if (apelidoVar == "" || origemVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
@@ -100,7 +100,8 @@ function Finalizar() {
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/personagem.js
                 apelidoServer: apelidoVar,
-                origemServer: origemVar
+                origemServer: origemVar,
+                idServer :idVar
 
             })
            

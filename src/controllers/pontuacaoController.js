@@ -1,14 +1,14 @@
-var personagemModel = require("../models/personagemModel");
+var pontuacaoModel = require("../models/pontuacaoModel");
 
 var sessoes = [];
 
 function testar(req, res) {
-    console.log("ENTRAMOS NA persongemController");
+    console.log("ENTRAMOS NA pontucaoController");
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
 function listar(req, res) {
-    personagemModel.listar()
+    pontuacaoModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -29,23 +29,23 @@ function listar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var id = req.body.idServer;
-    var apelido = req.body.apelidoServer;
-    var origem = req.body.origemServer;
+    var acertos = req.body.acertosServer;
+    var erros = req.body.errosServer;
     
   
 
     // Faça as validações dos valores
-    if (apelido == undefined) {
-        res.status(400).send("Seu apelido está undefined!");
-    }  else if (origem == undefined) {
-        res.status(400).send("Sua origem está undefined!");
+    if (acertos == undefined) {
+        res.status(400).send("Seu acertos está undefined!");
+    }  else if (erros == undefined) {
+        res.status(400).send("Sua erros está undefined!");
     }
     else if (id == undefined) {
         res.status(400).send("Sua id está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo personagemModel.js
-        personagemModel.cadastrar(id,apelido, origem)
+        pontuacaoModel.cadastrar(id,acertos, erros)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -54,7 +54,7 @@ function cadastrar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar o Insert de pontuação! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avengers | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <!-- Fonte-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body onload="carregarDados()">
+    <div id="banner" class="login">
+    <div id="login">
+        <div class="card" id="result">
+            <div class="titulo">
+                <p>Seus resultados:</p>
+            </div>
+            
+            <div class="resultado">
+                <canvas id="myChart" class="grafico"></canvas>
+            </div>
+     
+            <div id="aguardar">
+            
+                 <img src="assets/imgs/carregando.gif" alt="" >
+                 
+             </div>
+
+
+                <a href="jogo.html"><button class="btn" onclick="Voltar()">Finalizar</button></a>
+                
+
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
+<script>
+    var idVar = sessionStorage.ID_USUARIO ;
+    var usuario = JSON.parse(idVar);
+    var texto = ['Acertos','Erros'];
+    var qtdCertas =0;
+    var qtdErros = 0;
+
+    function carregarDados() {
+        fetch("/pontuacao/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                console.log(resposta);
+                console.log("Estamos aqui");
+
+                resposta.json().then(json => {
+                    //console.log(json);
+                    console.log(JSON.stringify(json));
+               
+                        qtdCertas = (json[(json.length)-1].acertos)
+                        qtdErros = (json[(json.length)-1].erros)
+                        console.log("Estamos aqui");
+                        console.log(json[(json.length)-1].acertos);
+                        console.log(json[(json.length)-1].erros);
+                    });
+                
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        });
+    }
+
+    setTimeout(function () {
+        const data = {
+      labels: ['Sua pontuação'],
+      datasets: [{
+        label: 'Pontos lógicos recebidos',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [qtdCertas],
+      },
+    {
+      label: 'Pontos lógicos perdidos',
+        backgroundColor: 'rgb(0, 204, 255)',
+        borderColor: 'rgb(0, 204, 255)',
+        data: [qtdErros],
+    }]
+    };
+
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+        const myChart = new Chart(document.getElementById('myChart'), config);
+        document.getElementById("aguardar").style.display = "none";
+    
+    }, 2000);
+</script>

@@ -272,3 +272,12 @@ img.possibilidade1:hover#possibilidade{
 .EstHistoria{
   width: 90%;
 }
+#aguardar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#aguardar img {
+  width: 10vw;
+}
