@@ -17,3 +17,9 @@ foreign key (idPersonagem) references usuario(id),
 apelido varchar(255),
 origem varchar(255)
 );
+create table pontuacao(
+idPersonagem int ,
+foreign key (idPersonagem) references usuario(id),
+acertos int(2),
+erros int(2)
+);
