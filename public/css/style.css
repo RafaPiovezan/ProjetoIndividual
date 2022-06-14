@@ -41,7 +41,7 @@ position: relative;
 #botoes{
   display: flex;
   flex-direction:column;
-margin-top: 25vw;
+margin-top: 23vw;
 }
 
 a{
@@ -62,6 +62,7 @@ color: white;
   overflow: hidden;
   transition: .3s all ease;
   font: 500 20px 'poppins';
+  
 }
 #botoes button:hover{
   color: black;
@@ -280,4 +281,34 @@ img.possibilidade1:hover#possibilidade{
 }
 #aguardar img {
   width: 10vw;
+  margin-top: -10vw;
+  margin-left: 10vw;
+  margin-bottom:3vw ;
+}
+
+.sobre{
+  background-color: rgba(0, 0, 0, 0.596);
+  
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+.sobre img{
+  width: 75vw;
+}
+#some{
+  display: none;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  overflow-x: hidden;
+}
+#some .sobre .imgFecha{
+  width: 2vw;
+  margin-top: 2vw;
+  margin-left: 2vw;
 }

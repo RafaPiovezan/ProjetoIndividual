@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,9 @@
 
     <title>Embarque Nessa Aventura</title>
 
-    <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
+
+    <link rel="icon" href="./assets/imgs/logo.png">
     <link rel="stylesheet" href="./css/style.css">
     <!-- Fonte-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,19 +29,22 @@
             <a href="cadastro.html">
                 <button class="btn" >Cadastrar</button>
             </a>
-            <a href="">
+            
                 <button onclick="revelarCreditos()" class="btn">Sobre</button>
-            </a>
+            
         </div>
         <div id="esquerda">
             <p>Avengers:the individual project</p>
 
 
 
-
-            <div id="loginAparece">
-              
-        </div>
+<div id="some">
+    <div class ="sobre">
+        <img src="assets/imgs/Creditos.png">
+        <img src="assets/imgs/x.png" class="imgFecha" onclick="fechar()">
+  </div>
+</div>
+         
         
 
     </div>
@@ -50,4 +53,10 @@
 
 </html>
 <script>
+    function revelarCreditos(){
+        some.style.display = 'block';
+    }
+    function fechar() {
+        some.style.display = 'none';
+    }
 </script>

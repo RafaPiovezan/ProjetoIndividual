@@ -29,8 +29,12 @@
             
             <div class="resultado">
                 <canvas id="myChart" class="grafico"></canvas>
+                
             </div>
-     
+            <p>Pabéns sua classificação final é <span id="classificacao">
+
+            </span></p>
+            <p id="congratulations"></p>
             <div id="aguardar">
             
                  <img src="assets/imgs/carregando.gif" alt="" >
@@ -53,11 +57,12 @@
 </html>
 <script>
     var idVar = sessionStorage.ID_USUARIO ;
+
     var usuario = JSON.parse(idVar);
     var texto = ['Acertos','Erros'];
     var qtdCertas =0;
     var qtdErros = 0;
-
+   
     function carregarDados() {
         fetch("/pontuacao/listar", {
             method: "GET",
@@ -79,6 +84,18 @@
                         console.log("Estamos aqui");
                         console.log(json[(json.length)-1].acertos);
                         console.log(json[(json.length)-1].erros);
+                    
+                        if (qtdCertas<1) {
+        classificacao.innerHTML = 'Pouco lógico';
+    }else if (qtdCertas >=1 && qtdCertas <=3){
+        classificacao.innerHTML = 'Na média';
+    }else{
+        classificacao.innerHTML = 'Bastante lógico';
+    }
+    for (var i = 0; i < qtdCertas; i++) {
+        congratulations.innerHTML += `Parabénss!! ${sessionStorage.NOME_USUARIO} <br>`;
+        
+    }
                     });
                 
 
@@ -93,14 +110,14 @@
       labels: ['Sua pontuação'],
       datasets: [{
         label: 'Pontos lógicos recebidos',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(255,0,0)',
+        borderColor: 'rgb(255, 0, 0)',
         data: [qtdCertas],
       },
     {
       label: 'Pontos lógicos perdidos',
-        backgroundColor: 'rgb(0, 204, 255)',
-        borderColor: 'rgb(0, 204, 255)',
+        backgroundColor: 'rgb(0, 0, 0)',
+        borderColor: 'rgb(0, 0, 0)',
         data: [qtdErros],
     }]
     };
@@ -115,4 +132,7 @@
         document.getElementById("aguardar").style.display = "none";
     
     }, 2000);
+
+
+
 </script>
